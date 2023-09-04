@@ -1,24 +1,25 @@
-import React from 'react';
-import style from './FeedbackOptions.module.css';
+import React from "react";
+import style from "./FeedbackOptions.module.css";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export default function FeedbackOptions({ options, onLeaveFeedback }) {
+export default function FeedbackOptions({options, onLeaveFeedback }) {
+  
+  
+  
   return (
     <div className={style.buttonContainer}>
-      {options.map(option => {
-        return (
-          <button
-            key={option}
-            type="button"
-            name={option}
-            onClick={onLeaveFeedback}
-            className={style.feedbackButton}
-          >
-            {option}
-          </button>
-        );
-      })}
+      {options.map((option) => (
+        <button
+          key={option}
+          type="button"
+          name={option}
+          onClick={() => onLeaveFeedback(option)}
+          className={style.feedbackButton}
+        >
+          {option}
+        </button>
+      ))}
     </div>
   );
 }
